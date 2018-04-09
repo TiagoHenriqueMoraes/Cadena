@@ -1,0 +1,23 @@
+<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Idade</th>
+				<th>Cidade</th>				
+			</tr>
+		</thead>
+		<% @cliente.each do |cliente|%>
+		
+		<tbody>
+			
+			<tr>
+				<td><%=cliente.nome%></td>
+				<td><%=cliente.idade%></td>
+				<td><%=cliente.cidade%></td>
+			</tr>	
+
+
+		</tbody>
+		<%end%>
+	</table>
+	
