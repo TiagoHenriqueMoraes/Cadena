@@ -10,6 +10,8 @@ class ClientesController < ApplicationController
 		if @cliente.save
 			flash[:notice] = "Cliente salvo com sucesso"
 			redirect_to root_url
+		else
+			render :new
 		end
 	end
 
