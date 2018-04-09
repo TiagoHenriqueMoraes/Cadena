@@ -1,3 +1,11 @@
+<% if flash[:notice]%>
+<div class="alert alert-success" role="alert">
+		<%= flash[:notice] %>
+	</div>
+<%end%>
+
+
+
 <form style="text-align: center; border: 1px solid gray;">
 	<h1>
 		Cadastro cliente
@@ -8,9 +16,5 @@
 	</div>
 	<div style="margin: 5px 0 5px 0">
 		<%= link_to "Listagem", clientes_show_path, class: "btn btn-primary"%>		
-	</div>
-
-
-	
-    
+	</div>    
 </form>

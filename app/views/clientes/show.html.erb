@@ -11,9 +11,17 @@
 		<tbody>
 			
 			<tr>
+				<td><%=cliente.id%></td>
 				<td><%=cliente.nome%></td>
 				<td><%=cliente.idade%></td>
 				<td><%=cliente.cidade%></td>
+				<td>
+				<%= button_to "Remover", cliente, method: :delete, class: "btn btn-danger", data: {confirm: "tem ctz que quer remover #{cliente.nome}?"} %>
+				</td>
+				<td>
+					<%= link_to "Editar", edit_cliente_path(cliente), class: "btn btn-info"%>
+				</td>
+				
 			</tr>	
 
 
