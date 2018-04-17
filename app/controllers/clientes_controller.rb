@@ -1,8 +1,9 @@
 class ClientesController < ApplicationController
 
-	before_action :set_id, only: [:edit, :destroy, :update]
+	before_action :set_id, only: [:edit, :destroy, :update, :show]
 
 	def index
+		@clientes = Cliente.all
 	end
 	def new
 		@cliente = Cliente.new
@@ -18,7 +19,6 @@ class ClientesController < ApplicationController
 	end
 
 	def show
-		@cliente = Cliente.all
 	end
 
 	def edit
@@ -47,7 +47,7 @@ class ClientesController < ApplicationController
 	end
 
 	def cliente_params
-		params.require(:cliente).permit :nome, :idade, :cidade	
+		params.require(:cliente).permit :nome, :idade, :cidade, :description	
 	end
 
 

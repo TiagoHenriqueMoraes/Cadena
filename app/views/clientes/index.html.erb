@@ -11,10 +11,31 @@
 		Cadastro Clientes
 	</h1>
 
-	<div style="margin: 15px 0 5px 0">
-		<%= link_to "Cadastrar", clientes_new_path, class: "btn btn-primary"%> 		
+	<table class="table table-striped">
+		<thead>
+		</thead>
+		<% @clientes.each do |cliente|%>
+		
+		<tbody>
+			
+			<tr>
+				<td width="900px"><%=link_to "#{cliente.nome}", cliente%></td>
+				<td>
+				<%= button_to "Remover", cliente, method: :delete, class: "btn btn-danger", data: {confirm: "Tem certeza que quer remover #{cliente.nome}?"} %>
+				</td>	
+				<td>
+				<%= link_to "Editar", edit_cliente_path(cliente), class: "btn btn-info"%>
+			</td>		
+			</tr>	
+
+
+		</tbody>
+		<%end%>
+	</table>
+
+	<div style="margin: 15px 0 5px 0; float: center">
+		<%= link_to "Cadastrar", new_cliente_path, class: "btn btn-primary"%> 
 	</div>
-	<div style="margin: 15px 0 5px 0">
-		<%= link_to "Lista de Cadastros", clientes_show_path, class: "btn btn-primary"%>		
-	</div>    
+	
+		
 </div>

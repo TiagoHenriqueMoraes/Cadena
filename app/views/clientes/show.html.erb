@@ -1,30 +1,22 @@
-<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>Nome</th>
-				<th>Idade</th>
-				<th>Cidade</th>				
-			</tr>
-		</thead>
-		<% @cliente.each do |cliente|%>
-		
-		<tbody>
-			
-			<tr>
-				<td><%=cliente.nome%></td>
-				<td><%=cliente.idade%></td>
-				<td><%=cliente.cidade%></td>
-				<td>
-				<%= button_to "Remover", cliente, method: :delete, class: "btn btn-danger", data: {confirm: "Tem certeza que quer remover #{cliente.nome}?"} %>
-				</td>
-				<td>
-					<%= link_to "Editar", edit_cliente_path(cliente), class: "btn btn-info"%>
-				</td>
-				
-			</tr>	
+<h1>Exbindo Cliente</h1>
 
+<%= form_for @cliente do |f|%>
+	<div class="form-group">
+		<%= f.label :nome%>
+		<%= f.text_field :nome, class:"form-control"%>
+	</div>
+	<div class="form-group">
+		<%= f.label :idade %>
+		<%= f.text_field :idade, class:"form-control", id: "disableInput"%>
+	</div>
 
-		</tbody>
-		<%end%>
-	</table>
-	
+	<div class="form-group">
+		<%= f.label :cidade %>
+		<%= f.text_field :cidade, class:"form-control"%>
+	</div>
+	<div class="form-group">
+		<%= f.label :description %>
+		<%= f.text_area :description, class:"form-control", rows: 4%>
+	</div>
+
+<% end %>
