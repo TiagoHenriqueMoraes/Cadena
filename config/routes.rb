@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :clientes
 
-  # Aplicando resources
-    resources :clientes
-  	#get "/clientes/:id" => "clientes#show", as: :clientes_show
- 	root "clientes#index"
+  root "clientes#index"
 end
